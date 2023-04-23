@@ -1,7 +1,7 @@
 import { createProductsHTML } from "./createHTML.js";
 
 
-const apiBase = "http://cmsca.bhlweb.no";
+const apiBase = "https://cmsca.bhlweb.no";
 const woocommerceBase = "/wp-json/wc/store";
 const productBase = "/products"
 const pagesBase = "/wp-json/wp/v2/pages";
