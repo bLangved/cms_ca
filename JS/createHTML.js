@@ -50,17 +50,40 @@ function createProductHTML(product){
     }
     productContainer.append(priceContainer);  
     
+    const stockQuantity = document.createElement("div");
+    stockQuantity.classList.add("productQuantity");
     
-    const addToCartBtn = document.createElement("button");
-    addToCartBtn.classList.add("addToCartBtnProduct");
-    addToCartBtn.innerText = "Add to cart"
-    productContainer.append(addToCartBtn);
-    
+
+    // This does not work good. I could not retrieve the stock_quantity property, so I ended up using add_to_cart.maximum which is made for soemthing else
+    stockQuantity.innerText = product.is_in_stock;
+    if((product.is_in_stock === true) && (product.add_to_cart.maximum > 100)){
+      stockQuantity.innerText = "100+ in stock";
+      stockQuantity.style = "color: green";
+    }
+    else if((product.is_in_stock === true) && (product.add_to_cart.maximum >= 50)){
+      stockQuantity.innerText = "50+ in stock";
+      stockQuantity.style = "color: green";
+    }
+    else if((product.is_in_stock === true) && (product.add_to_cart.maximum >= 15)){
+      stockQuantity.innerText = `${product.add_to_cart.maximum}` + " in stock";
+      stockQuantity.style = "color: green";
+    }
+    else if((product.is_in_stock === true) && (product.add_to_cart.maximum >= 1)){
+      stockQuantity.innerText = `${product.add_to_cart.maximum}` + " in stock";
+      stockQuantity.style = "color: orange";
+    }
+    // This does not actually work. It only returns "false". 
+  else{
+      product.innerText = "Out of stock";
+      stockQuantity.style = "color: red";
+    }
+    productContainer.append(stockQuantity);
+
+
     const productLink = document.createElement("a");
       productLink.href = `product.html?id=${product.id}`;
       productLink.append(productContainer);
       container.append(productLink);
-    
     }
 
 
