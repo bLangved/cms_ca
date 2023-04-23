@@ -77,6 +77,37 @@ header {
   color: rgb(120, 120, 120);
 }
 
+/* - MOBILE - */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .site_title {
+    display: flex;
+    justify-content: center;
+    margin: 0.5em auto;
+    gap: 0.5em;
+  }
+
+  .site_title-first {
+    font-size: 1.5rem;
+  }
+
+  .site_title-second {
+    font-size: 1rem;
+  }
+
+  .site_navigation {
+    padding: 0.5em 0;
+  }
+
+  .ul_navigation {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    gap: 0.5em;
+    margin: 0 auto;
+    font-size: 1rem;
+  }
+}
+
 /* --- FOOTER --- */
 
 footer {
@@ -128,19 +159,20 @@ footer {
 }
 
 /* - MOBILE - */
-/* ALL handheld DEVICES with PORTRAIT mode */
 @media only screen and (max-width: 1024px) and (orientation: portrait) {
   .section_footer {
     display: block;
+    margin-left: 1em;
   }
-}
 
-/* larger TABLET (ref. iPad Air 4.gen (LANDSCAPE orientation)) - Smaller DESKTOP */
-@media only screen and (min-width: 1025px) and (max-width: 1199px) {
-}
+  .shortcuts_footer {
+    padding-top: 0.5em;
+  }
 
-/* Big TABLET - Standard DESKTOP */
-@media only screen and (min-width: 1200px) and (max-width: 1600px) {
+  .list-elements_footer li {
+    margin-bottom: 0.75em;
+    font-size: 1.1rem;
+  }
 }
 
 /* - Site placement label */
@@ -155,7 +187,8 @@ footer {
   font-weight: bold;
 }
 
-.productTitle {
+.you-are-here-label div:last-child {
+  width: fit-content;
 }
 
 .you-are-here_hr {
@@ -164,11 +197,12 @@ footer {
 }
 
 /* --- product containers --- */
+
 .container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 1em;
-  margin: 0 1em 0 1em; /* White space on container ends */
 }
 
 .product {
@@ -226,6 +260,44 @@ footer {
 
 .heading_pages {
   text-align: center;
+}
+
+/* - MOBILE - */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .container {
+    display: block;
+  }
+
+  .product {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: auto;
+    margin: 0 1em 1em 1em;
+  }
+
+  .productTitle {
+    font-size: 0.75rem;
+    width: 20%;
+    margin: 0;
+  }
+
+  .productImg {
+    height: 6em;
+    width: 7em;
+    margin: 0.5em;
+  }
+
+  .priceContainer {
+    display: block;
+    text-align: center;
+    margin: auto;
+    font-size: 0.75rem;
+  }
+
+  .productQuantity {
+    font-size: 0.75rem;
+  }
 }
 
 /* --- INDEX --- */
@@ -289,6 +361,49 @@ footer {
   border: none;
   border-radius: none;
   font-weight: bold;
+  color: black;
+}
+
+/* - MOBILE - */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .heading-para_index {
+    margin: 0 0.5em;
+  }
+
+  .brandsTitle_index {
+    margin-top: 2em;
+    font-size: 1rem;
+  }
+
+  .brandsContainer_index {
+    gap: 1em;
+  }
+
+  .imgBrand_index {
+    width: 6em;
+    height: 3em;
+  }
+
+  .shippingContainer_index {
+    margin: 2em auto;
+  }
+
+  .shippingContainer_index h2 {
+    font-size: 1.5rem;
+  }
+
+  .shippingContainer_index p {
+    font-size: 1.25rem;
+  }
+
+  .shippingContainer_index i {
+    font-size: 4em;
+  }
+
+  .shippingContainer_index button {
+    height: 4em;
+    width: 12em;
+  }
 }
 
 /* --- PRODUCT --- */
@@ -345,10 +460,41 @@ footer {
   border-radius: none;
   font-weight: bold;
   display: block;
+  color: green;
 }
 
 .description_product {
   margin: 2em;
+}
+
+/* - MOBILE - */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .container_product {
+    margin: 0 1em;
+  }
+
+  .productSubTitle_product {
+    font-size: 1.25rem;
+  }
+
+  .productImg_product {
+    height: 12em;
+    width: 14em;
+  }
+
+  .priceContainer_product {
+    gap: 0.5em;
+    font-size: 1.25rem;
+  }
+
+  .addToCartBtnProduct_product {
+    width: 12em;
+    height: 4em;
+  }
+
+  .description_product {
+    margin: 1em;
+  }
 }
 
 /* --- CART --- */
@@ -413,10 +559,7 @@ footer {
   border-radius: none;
   font-weight: bold;
   display: block;
-}
-
-.description_cart {
-  margin: 2em;
+  color: red;
 }
 
 /* - Checkout Container - */
@@ -459,4 +602,38 @@ footer {
 
 .checkoutBtn_cart:hover {
   background-color: rgb(0, 180, 0);
+}
+
+/* - MOBILE - */
+@media only screen and (max-width: 1024px) and (orientation: portrait) {
+  .container_cart {
+    margin: 0;
+    border-radius: 0;
+    padding: 0.5em;
+  }
+
+  .product_cart {
+    display: flex;
+    align-items: center;
+  }
+
+  .productImg_cart {
+    padding: 0.5em;
+  }
+  .productTitle_cart {
+    font-size: 1rem;
+  }
+
+  .priceContainer_cart {
+    display: block;
+    text-align: center;
+    gap: 1em;
+    font-size: 1rem;
+  }
+
+  .removeFromCartBtn_cart {
+    width: fit-content;
+    height: 5em;
+    margin: 0 2.5% 0 auto;
+  }
 }

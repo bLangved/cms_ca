@@ -53,18 +53,17 @@ export function createProductHTML(product){
 
 
     const addToCartBtn = document.createElement("button");
-
     addToCartBtn.addEventListener("click", addToCart);
     function addToCart(){
         // Store the product data in local storage
         localStorage.setItem("product", JSON.stringify(product));
         console.log("Product: " + product.name + " added to localstorage");
     }
-
     addToCartBtn.classList.add("addToCartBtnProduct_product");
     addToCartBtn.innerText = "Add to cart"
     productContainer.append(addToCartBtn);
 
+    
     const productDescription = document.createElement("div");
     productDescription.classList.add("description_product");
     productDescription.innerHTML = product.description.replace(/<span class="a-list-item">|<\/span>/g, '');
